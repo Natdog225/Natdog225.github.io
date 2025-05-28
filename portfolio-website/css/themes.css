@@ -1,0 +1,171 @@
+/* Color Variables - Professional Theme (Default) */
+:root {
+    --dark-purple: #320a28;
+    --tyrian-purple: #511730;
+    --chestnut: #8e443d;
+    --white: #ffffff;
+    --dark-green: #002a22;
+    --teal: #61A0AF;
+    
+    /* Professional Mode Colors */
+    --bg-primary: var(--dark-purple);
+    --bg-secondary: var(--tyrian-purple);
+    --text-primary: var(--teal);
+    --text-accent: var(--white);
+    --accent: var(--chestnut);
+    --border-color: rgba(97, 160, 175, 0.2);
+}
+
+/* Fun Theme Colors */
+[data-theme="fun"] {
+    --bg-primary: var(--chestnut);
+    --bg-secondary: var(--dark-green);
+    --text-primary: var(--white);
+    --text-accent: var(--teal);
+    --accent: var(--tyrian-purple);
+    --border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Theme-specific content visibility */
+/* Professional content visible by default */
+.professional-text,
+.professional-content,
+.professional-img {
+    display: block;
+}
+
+.fun-text,
+.fun-content,
+.fun-img {
+    display: none;
+}
+
+/* Fun mode content visibility */
+[data-theme="fun"] .professional-text,
+[data-theme="fun"] .professional-content,
+[data-theme="fun"] .professional-img {
+    display: none;
+}
+
+[data-theme="fun"] .fun-text,
+[data-theme="fun"] .fun-content,
+[data-theme="fun"] .fun-img {
+    display: block;
+}
+
+/* Theme toggle button text change */
+.theme-toggle .toggle-text::after {
+    content: "Fun Mode";
+}
+
+[data-theme="fun"] .theme-toggle .toggle-text::after {
+    content: "Professional";
+}
+
+.theme-toggle .toggle-text {
+    font-size: 0; /* Hide original text */
+}
+
+/* Fun mode specific styling */
+[data-theme="fun"] {
+    /* Add some personality to the fun version */
+}
+
+[data-theme="fun"] .hero-title {
+    background: linear-gradient(45deg, var(--text-accent), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme="fun"] .section-title {
+    position: relative;
+}
+
+[data-theme="fun"] .section-title::after {
+    content: "✨";
+    margin-left: 0.5rem;
+    animation: sparkle 2s ease-in-out infinite alternate;
+}
+
+[data-theme="fun"] .project-card {
+    border: 2px solid var(--accent);
+}
+
+[data-theme="fun"] .tech-item:hover {
+    background: var(--accent);
+    color: var(--text-accent);
+}
+
+[data-theme="fun"] .fun-fact {
+    font-size: 1.2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border-left: 4px solid var(--accent);
+}
+
+/* Animations for fun mode */
+@keyframes sparkle {
+    0% { transform: scale(1) rotate(0deg); }
+    100% { transform: scale(1.2) rotate(180deg); }
+}
+
+[data-theme="fun"] .profile-img {
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+}
+
+[data-theme="fun"] .hero-cta .btn-primary {
+    background: linear-gradient(45deg, var(--accent), var(--text-accent));
+    animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 20px rgba(81, 23, 48, 0.5); }
+    100% { box-shadow: 0 0 30px rgba(81, 23, 48, 0.8), 0 0 40px rgba(97, 160, 175, 0.3); }
+}
+
+/* Smooth transitions for theme switching */
+* {
+    transition: 
+        background-color 0.5s ease,
+        color 0.5s ease,
+        border-color 0.5s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Additional fun mode personality */
+[data-theme="fun"] .contact-link:hover {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+}
+
+[data-theme="fun"] .tech-tag {
+    background: linear-gradient(45deg, var(--accent), var(--dark-green));
+    color: var(--text-accent);
+}
+
+/* Make the fun version feel more dynamic */
+[data-theme="fun"] .project-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+}
+
+[data-theme="fun"] .hero-image:hover .profile-img {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+/* Responsive adjustments for themes */
+@media (max-width: 768px) {
+    [data-theme="fun"] .hero-title {
+        background: var(--text-accent);
+        -webkit-text-fill-color: initial;
+        color: var(--text-accent);
+    }
+}

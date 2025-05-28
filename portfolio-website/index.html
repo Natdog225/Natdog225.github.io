@@ -1,1 +1,220 @@
-Echo Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body data-theme="professional">
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="logo">Your Name</h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#resume" class="nav-link">Resume</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="toggle-text">Fun Mode</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="images/professional-headshot.jpg" alt="Professional headshot" class="profile-img professional-img">
+                    <img src="images/fun-avatar.png" alt="Fun avatar" class="profile-img fun-img">
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="professional-text">Hello, I'm [Your Name]</span>
+                        <span class="fun-text">Hey there! I'm [Your Name]</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        <span class="professional-text">Software Developer & Problem Solver</span>
+                        <span class="fun-text">Code Wizard & Digital Creative</span>
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <span class="professional-text">View My Work</span>
+                            <span class="fun-text">Check Out Cool Stuff</span>
+                        </a>
+                        <a href="assets/resume.pdf" class="btn btn-secondary">Download Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="professional-text">About Me</span>
+                <span class="fun-text">The Story Behind the Code</span>
+            </h2>
+            <div class="about-content">
+                <div class="professional-content">
+                    <p>I'm a software developer with a strong foundation in systems programming, currently expanding into full-stack web development. My experience with C/C++ has given me a deep understanding of computer science fundamentals, which I now apply to creating efficient, user-focused applications.</p>
+                    <p>I enjoy tackling complex problems and building solutions that make a real impact. Always eager to learn new technologies and collaborate on innovative projects.</p>
+                </div>
+                <div class="fun-content">
+                    <p>So here's the deal - I started my coding journey in the wonderful world of C and C++ (yes, I know, memory management and pointers, the fun stuff!). But lately, I've been venturing into the wild west of web development, and honestly? It's been a blast!</p>
+                    <p>When I'm not debugging code or learning the latest framework, you can find me [add your hobbies here]. I believe the best software comes from developers who understand both the technical side and the human side of technology.</p>
+                    <p class="fun-fact">🎮 Fun fact: I've probably spent as much time debugging segmentation faults as most people spend watching Netflix!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack" id="tech">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="professional-text">Technical Skills</span>
+                <span class="fun-text">My Digital Toolkit</span>
+            </h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <span class="tech-name">C/C++</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">JavaScript</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">HTML/CSS</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">Git</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">Python</span>
+                </div>
+                <div class="tech-item">
+                    <span class="tech-name">React</span>
+                </div>
+                <!-- Add more as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="professional-text">Featured Projects</span>
+                <span class="fun-text">Cool Things I've Built</span>
+            </h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/project1.jpg" alt="Project 1">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Project Name 1</h3>
+                        <p class="project-description professional-text">Professional description of the project, focusing on technical achievements and business impact.</p>
+                        <p class="project-description fun-text">The fun story behind this project - what inspired it, challenges faced, and why it was awesome to build!</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Algorithm Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/project2.jpg" alt="Project 2">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Project Name 2</h3>
+                        <p class="project-description professional-text">Another professional project description highlighting key technologies and outcomes.</p>
+                        <p class="project-description fun-text">The behind-the-scenes story of this project - maybe a late-night coding session or an "aha!" moment.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Web Development</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Live Demo</a>
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume" id="resume">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="professional-text">Resume</span>
+                <span class="fun-text">The Official Stuff</span>
+            </h2>
+            <div class="resume-content">
+                <div class="resume-summary">
+                    <p class="professional-text">Download my complete resume for detailed information about my experience, education, and technical skills.</p>
+                    <p class="fun-text">All the formal details about my journey from C++ to web dev - in PDF format for your convenience!</p>
+                </div>
+                <a href="assets/resume.pdf" class="btn btn-primary resume-download">
+                    <span class="professional-text">Download Resume</span>
+                    <span class="fun-text">Grab My Resume</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="professional-text">Let's Connect</span>
+                <span class="fun-text">Let's Chat!</span>
+            </h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p class="professional-text">I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+                    <p class="fun-text">Got a cool project idea? Want to chat about code? Or just want to say hi? Drop me a line!</p>
+                </div>
+                <div class="contact-methods">
+                    <a href="mailto:your.email@example.com" class="contact-link">
+                        <span class="professional-text">your.email@example.com</span>
+                        <span class="fun-text">Hit me up via email!</span>
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" class="contact-link">LinkedIn</a>
+                    <a href="https://github.com/yourusername" class="contact-link">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="professional-text">&copy; 2025 Your Name. All rights reserved.</p>
+            <p class="fun-text">Made with ☕ and lots of Stack Overflow visits</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
