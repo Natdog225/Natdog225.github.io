@@ -298,8 +298,9 @@ section {
 }
 
 .project-image {
-    height: 200px;
+    height: 220px;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .project-image img {
