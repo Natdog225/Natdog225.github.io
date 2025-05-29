@@ -9,9 +9,32 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentTheme = localStorage.getItem('theme') || 'professional';
         body.setAttribute('data-theme', currentTheme);
 
-        // Update toggle button text/state if needed (example)
-        // themeToggle.textContent = currentTheme === 'professional' ? 'Fun Mode' : 'Pro Mode';
+        // Ensure button has proper structure for CSS text switching
+        if (!themeToggle.querySelector('.toggle-text')) {
+            // If no toggle-text span exists, create one
+            const toggleText = document.createElement('span');
+            toggleText.className = 'toggle-text';
+            themeToggle.appendChild(toggleText);
+        }
 
+        // Fallback: Update button text directly if CSS method isn't working
+        function updateButtonText(theme) {
+            const toggleTextSpan = themeToggle.querySelector('.toggle-text');
+            if (toggleTextSpan) {
+                // CSS handles this via ::after pseudo-element, but we can add fallback
+                if (!getComputedStyle(toggleTextSpan, ':after').content || 
+                    getComputedStyle(toggleTextSpan, ':after').content === 'none') {
+                    // CSS pseudo-element isn't working, use direct text
+                    themeToggle.textContent = theme === 'professional' ? 'Fun Mode' : 'Professional';
+                }
+            } else {
+                // No span, just set button text directly
+                themeToggle.textContent = theme === 'professional' ? 'Fun Mode' : 'Professional';
+            }
+        }
+
+        // Set initial button text
+        updateButtonText(currentTheme);
 
         // Theme toggle click handler
         themeToggle.addEventListener('click', function() {
@@ -28,9 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
             body.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
 
-            // Update toggle button text/state if needed (example)
-            // themeToggle.textContent = newTheme === 'professional' ? 'Fun Mode' : 'Pro Mode';
-
+            // Update button text
+            updateButtonText(newTheme);
 
             // Optional: Add some fun effects when switching to fun mode
             if (newTheme === 'fun') {
@@ -38,9 +60,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (typeof createSparkles === 'function') {
                     createSparkles();
                 } else {
-                    console.log('createSparkles function is not defined, but fun mode activated!');
-                    // You could add a simple placeholder effect here if createSparkles isn't ready
-                    // For example, a quick body flash or console message
+                    console.log('🎉 Fun mode activated!');
+                    // Simple fallback effect - brief body highlight
+                    body.style.transition = 'box-shadow 0.3s ease';
+                    body.style.boxShadow = '0 0 20px rgba(0, 191, 178, 0.3)';
+                    setTimeout(() => {
+                        body.style.boxShadow = 'none';
+                    }, 600);
                 }
             }
         });
@@ -75,38 +101,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
 }); // Closing DOMContentLoaded listener
 
-// Placeholder or example for createSparkles function
-// You'll need to implement this function to actually create sparkles
-/*
+// Enhanced createSparkles function using your new color palette
 function createSparkles() {
-    console.log('Sparkle effect activated!');
-    for (let i = 0; i < 20; i++) {
+    console.log('✨ Sparkle effect activated!');
+    const colors = ['#00bfb2', '#f87060', '#f0f3bd', '#028090']; // Your fun theme colors
+    
+    for (let i = 0; i < 15; i++) {
         const sparkle = document.createElement('div');
-        sparkle.classList.add('sparkle'); // You'll need to style this class in CSS
+        sparkle.classList.add('sparkle');
+        sparkle.style.position = 'fixed';
         sparkle.style.top = Math.random() * 100 + 'vh';
         sparkle.style.left = Math.random() * 100 + 'vw';
-        sparkle.style.animationDuration = Math.random() * 1 + 0.5 + 's'; // Vary duration
+        sparkle.style.width = '8px';
+        sparkle.style.height = '8px';
+        sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        sparkle.style.borderRadius = '50%';
+        sparkle.style.pointerEvents = 'none';
+        sparkle.style.zIndex = '9999';
+        sparkle.style.animation = `sparkle-animation ${Math.random() * 1 + 0.8}s forwards`;
+        
         document.body.appendChild(sparkle);
+        
         setTimeout(() => {
-            sparkle.remove();
-        }, 1500); // Remove sparkles after animation
+            if (sparkle.parentNode) {
+                sparkle.remove();
+            }
+        }, 2000); // Remove sparkles after animation
     }
 }
 
-// Example CSS for .sparkle (add to your stylesheet):
-// .sparkle {
-//     position: fixed;
-//     width: 10px;
-//     height: 10px;
-//     background-color: #FFD700; // Gold color
-//     border-radius: 50%;
-//     pointer-events: none;
-//     animation: sparkle-animation 1s forwards;
-//     z-index: 9999;
-// }
-
-// @keyframes sparkle-animation {
-//     0% { transform: scale(1); opacity: 1; }
-//     100% { transform: scale(0); opacity: 0; }
-// }
-*/
+// Add sparkle animation styles dynamically if they don't exist
+if (!document.querySelector('#sparkle-styles')) {
+    const style = document.createElement('style');
+    style.id = 'sparkle-styles';
+    style.textContent = `
+        @keyframes sparkle-animation {
+            0% { 
+                transform: scale(1) rotate(0deg); 
+                opacity: 1; 
+            }
+            50% { 
+                transform: scale(1.5) rotate(180deg); 
+                opacity: 0.8; 
+            }
+            100% { 
+                transform: scale(0) rotate(360deg); 
+                opacity: 0; 
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
