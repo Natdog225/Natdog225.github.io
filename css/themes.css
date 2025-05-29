@@ -7,6 +7,13 @@
     --dark-green: #002a22;
     --teal: #61A0AF;
     
+    /* New Fun Mode Color Palette */
+    --light-sea-green: #00bfb2;
+    --caribbean-current: #1a5e63;
+    --teal-bright: #028090;
+    --cream: #f0f3bd;
+    --bittersweet: #f87060;
+    
     /* Professional Mode Colors */
     --bg-primary: var(--dark-purple);
     --bg-secondary: var(--tyrian-purple);
@@ -16,14 +23,14 @@
     --border-color: rgba(97, 160, 175, 0.2);
 }
 
-/* Fun Theme Colors */
+/* Fun Theme Colors - Updated with New Palette */
 [data-theme="fun"] {
-    --bg-primary: var(--chestnut);
-    --bg-secondary: var(--dark-green);
-    --text-primary: var(--white);
-    --text-accent: var(--teal);
-    --accent: var(--tyrian-purple);
-    --border-color: rgba(255, 255, 255, 0.2);
+    --bg-primary: var(--caribbean-current);
+    --bg-secondary: var(--teal-bright);
+    --text-primary: var(--cream);
+    --text-accent: var(--light-sea-green);
+    --accent: var(--bittersweet);
+    --border-color: rgba(240, 243, 189, 0.3);
 }
 
 /* Theme-specific content visibility */
@@ -94,13 +101,13 @@
 
 [data-theme="fun"] .tech-item:hover {
     background: var(--accent);
-    color: var(--text-accent);
+    color: var(--text-primary);
 }
 
 [data-theme="fun"] .fun-fact {
     font-size: 1.2rem;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(240, 243, 189, 0.15);
     border-radius: 15px;
     border-left: 4px solid var(--accent);
 }
@@ -122,8 +129,8 @@
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 20px rgba(81, 23, 48, 0.5); }
-    100% { box-shadow: 0 0 30px rgba(81, 23, 48, 0.8), 0 0 40px rgba(97, 160, 175, 0.3); }
+    0% { box-shadow: 0 0 20px rgba(248, 112, 96, 0.4); }
+    100% { box-shadow: 0 0 30px rgba(248, 112, 96, 0.6), 0 0 40px rgba(0, 191, 178, 0.3); }
 }
 
 /* Smooth transitions for theme switching */
@@ -148,17 +155,38 @@
 }
 
 [data-theme="fun"] .tech-tag {
-    background: linear-gradient(45deg, var(--accent), var(--dark-green));
-    color: var(--text-accent);
+    background: linear-gradient(45deg, var(--accent), var(--teal-bright));
+    color: var(--text-primary);
 }
 
 /* Make the fun version feel more dynamic */
 [data-theme="fun"] .project-card:hover {
     transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 10px 25px rgba(0, 191, 178, 0.2);
 }
 
 [data-theme="fun"] .hero-image:hover .profile-img {
     transform: scale(1.05) rotate(-2deg);
+}
+
+/* Enhanced fun mode styling with new colors */
+[data-theme="fun"] .btn-secondary {
+    background: var(--light-sea-green);
+    color: var(--caribbean-current);
+    border: 2px solid var(--caribbean-current);
+}
+
+[data-theme="fun"] .btn-secondary:hover {
+    background: var(--caribbean-current);
+    color: var(--cream);
+    transform: translateY(-2px);
+}
+
+[data-theme="fun"] .highlight {
+    background: linear-gradient(120deg, var(--light-sea-green), var(--teal-bright));
+    color: var(--cream);
+    padding: 0.2em 0.5em;
+    border-radius: 5px;
 }
 
 /* Responsive adjustments for themes */
@@ -167,5 +195,9 @@
         background: var(--text-accent);
         -webkit-text-fill-color: initial;
         color: var(--text-accent);
+    }
+    
+    [data-theme="fun"] .project-card:hover {
+        transform: translateY(-5px);
     }
 }
