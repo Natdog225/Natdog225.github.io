@@ -61,16 +61,23 @@
 }
 
 /* Theme toggle button text change */
+.theme-toggle .toggle-text {
+    font-size: inherit; /* Show the text */
+}
+
+/* Hide the HTML text and show CSS content instead */
+.theme-toggle .toggle-text {
+    font-size: 0; /* Hide original HTML text */
+}
+
 .theme-toggle .toggle-text::after {
     content: "Fun Mode";
+    font-size: 0.875rem; /* Restore font size for pseudo-content */
+    font-weight: 500;
 }
 
 [data-theme="fun"] .theme-toggle .toggle-text::after {
     content: "Professional";
-}
-
-.theme-toggle .toggle-text {
-    font-size: 0; /* Hide original text */
 }
 
 /* Fun mode specific styling */
