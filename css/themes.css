@@ -38,12 +38,16 @@
     --text-accent: var(--light-sea-green);
     --accent: var(--bittersweet);
     --border-color: rgba(240, 243, 189, 0.3);
+    
+    /* Override professional glass effects for fun mode */
+    --glass-bg: var(--bg-primary);
+    --glass-border: var(--border-color);
 }
 
-/* Modern Professional Theme Enhancements */
+/* PROFESSIONAL MODE STYLES (Default - no data-theme attribute) */
 
 /* Modern card-based header */
-.header {
+body:not([data-theme="fun"]) .header {
     background: rgba(26, 26, 46, 0.95);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--glass-border);
@@ -51,19 +55,19 @@
 }
 
 /* Modern tile-based layout for sections */
-.about,
-.tech-stack,
-.projects,
-.resume,
-.contact {
+body:not([data-theme="fun"]) .about,
+body:not([data-theme="fun"]) .tech-stack,
+body:not([data-theme="fun"]) .projects,
+body:not([data-theme="fun"]) .resume,
+body:not([data-theme="fun"]) .contact {
     position: relative;
 }
 
-.about::before,
-.tech-stack::before,
-.projects::before,
-.resume::before,
-.contact::before {
+body:not([data-theme="fun"]) .about::before,
+body:not([data-theme="fun"]) .tech-stack::before,
+body:not([data-theme="fun"]) .projects::before,
+body:not([data-theme="fun"]) .resume::before,
+body:not([data-theme="fun"]) .contact::before {
     content: '';
     position: absolute;
     top: 0;
@@ -77,14 +81,14 @@
 }
 
 /* Modern hero section */
-.hero {
+body:not([data-theme="fun"]) .hero {
     background: 
         linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%),
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
 }
 
 /* Modern profile image styling */
-.profile-img {
+body:not([data-theme="fun"]) .profile-img {
     border: 4px solid transparent;
     background: var(--accent-gradient);
     padding: 4px;
@@ -92,13 +96,13 @@
     transition: all 0.3s ease;
 }
 
-.profile-img:hover {
+body:not([data-theme="fun"]) .profile-img:hover {
     box-shadow: var(--card-shadow-hover);
     transform: translateY(-5px);
 }
 
 /* Modern button styling */
-.btn-primary {
+body:not([data-theme="fun"]) .btn-primary {
     background: var(--accent-gradient);
     border: none;
     box-shadow: var(--card-shadow);
@@ -106,7 +110,7 @@
     overflow: hidden;
 }
 
-.btn-primary::before {
+body:not([data-theme="fun"]) .btn-primary::before {
     content: '';
     position: absolute;
     top: 0;
@@ -117,12 +121,12 @@
     transition: left 0.5s;
 }
 
-.btn-primary:hover::before {
+body:not([data-theme="fun"]) .btn-primary:hover::before {
     left: 100%;
 }
 
 /* Modern tech stack cards */
-.tech-item {
+body:not([data-theme="fun"]) .tech-item {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
@@ -131,7 +135,7 @@
     overflow: hidden;
 }
 
-.tech-item::before {
+body:not([data-theme="fun"]) .tech-item::before {
     content: '';
     position: absolute;
     top: 0;
@@ -143,12 +147,12 @@
     transition: transform 0.3s ease;
 }
 
-.tech-item:hover::before {
+body:not([data-theme="fun"]) .tech-item:hover::before {
     transform: scaleX(1);
 }
 
 /* Modern project cards */
-.project-card {
+body:not([data-theme="fun"]) .project-card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
@@ -157,7 +161,7 @@
     overflow: hidden;
 }
 
-.project-card::before {
+body:not([data-theme="fun"]) .project-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -170,18 +174,18 @@
     z-index: -1;
 }
 
-.project-card:hover::before {
+body:not([data-theme="fun"]) .project-card:hover::before {
     opacity: 0.05;
 }
 
-.project-card:hover {
+body:not([data-theme="fun"]) .project-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: var(--card-shadow-hover);
     border-color: rgba(102, 126, 234, 0.3);
 }
 
 /* Modern section titles with gradient - PROFESSIONAL MODE ONLY */
-.section-title {
+body:not([data-theme="fun"]) .section-title {
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -191,7 +195,7 @@
     margin: 0 auto;
 }
 
-.section-title::after {
+body:not([data-theme="fun"]) .section-title::after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -204,7 +208,7 @@
 }
 
 /* Modern contact section */
-.contact-link {
+body:not([data-theme="fun"]) .contact-link {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
@@ -214,7 +218,7 @@
     overflow: hidden;
 }
 
-.contact-link::before {
+body:not([data-theme="fun"]) .contact-link::before {
     content: '';
     position: absolute;
     top: 0;
@@ -227,24 +231,24 @@
     z-index: -1;
 }
 
-.contact-link:hover::before {
+body:not([data-theme="fun"]) .contact-link:hover::before {
     opacity: 1;
 }
 
-.contact-link:hover {
+body:not([data-theme="fun"]) .contact-link:hover {
     color: white;
     transform: translateY(-2px);
     box-shadow: var(--card-shadow);
 }
 
 /* Modern footer */
-.footer {
+body:not([data-theme="fun"]) .footer {
     background: rgba(26, 26, 46, 0.95);
     backdrop-filter: blur(20px);
     position: relative;
 }
 
-.footer::before {
+body:not([data-theme="fun"]) .footer::before {
     content: '';
     position: absolute;
     top: 0;
@@ -255,26 +259,147 @@
 }
 
 /* Modern navigation enhancements */
-.nav-link {
+body:not([data-theme="fun"]) .nav-link {
     position: relative;
     padding: 0.5rem 1rem;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
-.nav-link:hover {
+body:not([data-theme="fun"]) .nav-link:hover {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
 }
 
-.nav-link::after {
+body:not([data-theme="fun"]) .nav-link::after {
     background: var(--accent-gradient);
     height: 2px;
     border-radius: 1px;
 }
 
+/* FUN MODE STYLES */
+
+/* Fun mode header */
+[data-theme="fun"] .header {
+    background: rgba(26, 94, 99, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Fun mode hero title */
+[data-theme="fun"] .hero-title {
+    color: var(--text-primary);
+}
+
+/* Fun mode section titles */
+[data-theme="fun"] .section-title {
+    color: var(--text-accent);
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+[data-theme="fun"] .section-title::after {
+    content: "✨";
+    margin-left: 0.5rem;
+    animation: sparkle 2s ease-in-out infinite alternate;
+}
+
+/* Fun mode project cards */
+[data-theme="fun"] .project-card {
+    background: var(--bg-primary);
+    border: 2px solid var(--accent);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="fun"] .project-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 10px 25px rgba(0, 191, 178, 0.2);
+}
+
+/* Fun mode tech items */
+[data-theme="fun"] .tech-item {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="fun"] .tech-item:hover {
+    background: var(--accent);
+    color: var(--text-primary);
+}
+
+/* Fun mode contact links */
+[data-theme="fun"] .contact-link {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+[data-theme="fun"] .contact-link:hover {
+    animation: wiggle 0.5s ease-in-out;
+    background: var(--accent);
+    color: var(--text-primary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Fun mode profile image */
+[data-theme="fun"] .profile-img {
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    background: none;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+[data-theme="fun"] .hero-image:hover .profile-img {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+/* Fun mode buttons */
+[data-theme="fun"] .btn-primary {
+    background: linear-gradient(45deg, var(--accent), var(--text-accent));
+    animation: pulse 2s ease-in-out infinite alternate;
+    border: none;
+}
+
+[data-theme="fun"] .btn-secondary {
+    background: var(--light-sea-green);
+    color: var(--caribbean-current);
+    border: 2px solid var(--caribbean-current);
+}
+
+[data-theme="fun"] .btn-secondary:hover {
+    background: var(--caribbean-current);
+    color: var(--cream);
+    transform: translateY(-2px);
+}
+
+/* Fun mode footer */
+[data-theme="fun"] .footer {
+    background: rgba(26, 94, 99, 0.95);
+    backdrop-filter: blur(20px);
+    position: relative;
+}
+
+[data-theme="fun"] .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--accent);
+}
+
+/* SHARED STYLES FOR BOTH THEMES */
+
 /* Theme-specific content visibility */
-/* Professional content visible by default */
 .professional-text,
 .professional-content,
 .professional-img {
@@ -287,7 +412,6 @@
     display: none;
 }
 
-/* Fun mode content visibility */
 [data-theme="fun"] .professional-text,
 [data-theme="fun"] .professional-content,
 [data-theme="fun"] .professional-img {
@@ -302,12 +426,12 @@
 
 /* Theme toggle button text change */
 .theme-toggle .toggle-text {
-    font-size: 0; /* Hide original HTML text */
+    font-size: 0;
 }
 
 .theme-toggle .toggle-text::after {
     content: "Fun Mode";
-    font-size: 0.875rem; /* Restore font size for pseudo-content */
+    font-size: 0.875rem;
     font-weight: 500;
 }
 
@@ -315,93 +439,7 @@
     content: "Professional";
 }
 
-/* FUN MODE SPECIFIC OVERRIDES - RESET PROFESSIONAL EFFECTS */
-
-/* Reset hero title gradient for fun mode */
-[data-theme="fun"] .hero-title {
-    background: none !important;
-    -webkit-background-clip: initial !important;
-    -webkit-text-fill-color: initial !important;
-    background-clip: initial !important;
-    color: var(--text-primary) !important;
-}
-
-/* Reset section titles for fun mode */
-[data-theme="fun"] .section-title {
-    background: none !important;
-    -webkit-background-clip: initial !important;
-    -webkit-text-fill-color: initial !important;
-    background-clip: initial !important;
-    color: var(--text-accent) !important;
-}
-
-[data-theme="fun"] .section-title::after {
-    content: "✨" !important;
-    position: static !important;
-    margin-left: 0.5rem;
-    animation: sparkle 2s ease-in-out infinite alternate;
-    background: none !important;
-    width: auto !important;
-    height: auto !important;
-    transform: none !important;
-    bottom: auto !important;
-    left: auto !important;
-}
-
-/* Reset project cards for fun mode */
-[data-theme="fun"] .project-card {
-    background: var(--bg-primary) !important;
-    border: 2px solid var(--accent) !important;
-    backdrop-filter: none !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-}
-
-[data-theme="fun"] .project-card::before {
-    display: none !important;
-}
-
-[data-theme="fun"] .project-card:hover {
-    transform: translateY(-10px) rotate(1deg) !important;
-    box-shadow: 0 10px 25px rgba(0, 191, 178, 0.2) !important;
-    border-color: var(--accent) !important;
-}
-
-/* Reset tech items for fun mode */
-[data-theme="fun"] .tech-item {
-    background: var(--bg-primary) !important;
-    border: 1px solid var(--border-color) !important;
-    backdrop-filter: none !important;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-}
-
-[data-theme="fun"] .tech-item::before {
-    display: none !important;
-}
-
-[data-theme="fun"] .tech-item:hover {
-    background: var(--accent) !important;
-    color: var(--text-primary) !important;
-}
-
-/* Reset contact links for fun mode */
-[data-theme="fun"] .contact-link {
-    background: var(--bg-primary) !important;
-    border: 1px solid var(--border-color) !important;
-    backdrop-filter: none !important;
-}
-
-[data-theme="fun"] .contact-link::before {
-    display: none !important;
-}
-
-[data-theme="fun"] .contact-link:hover {
-    animation: wiggle 0.5s ease-in-out;
-    background: var(--accent) !important;
-    color: var(--text-primary) !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Fun mode specific styling */
+/* Fun mode specific elements */
 [data-theme="fun"] .fun-fact {
     font-size: 1.2rem;
     padding: 1rem;
@@ -410,23 +448,22 @@
     border-left: 4px solid var(--accent);
 }
 
-/* Animations for fun mode */
+[data-theme="fun"] .tech-tag {
+    background: linear-gradient(45deg, var(--accent), var(--teal-bright));
+    color: var(--text-primary);
+}
+
+[data-theme="fun"] .highlight {
+    background: linear-gradient(120deg, var(--light-sea-green), var(--teal-bright));
+    color: var(--cream);
+    padding: 0.2em 0.5em;
+    border-radius: 5px;
+}
+
+/* Animations */
 @keyframes sparkle {
     0% { transform: scale(1) rotate(0deg); }
     100% { transform: scale(1.2) rotate(180deg); }
-}
-
-[data-theme="fun"] .profile-img {
-    border-radius: 50% !important;
-    border: 4px solid var(--accent) !important;
-    background: none !important;
-    padding: 0 !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
-}
-
-[data-theme="fun"] .hero-cta .btn-primary {
-    background: linear-gradient(45deg, var(--accent), var(--text-accent)) !important;
-    animation: pulse 2s ease-in-out infinite alternate;
 }
 
 @keyframes pulse {
@@ -438,50 +475,6 @@
     0%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(-3deg); }
     75% { transform: rotate(3deg); }
-}
-
-[data-theme="fun"] .tech-tag {
-    background: linear-gradient(45deg, var(--accent), var(--teal-bright));
-    color: var(--text-primary);
-}
-
-[data-theme="fun"] .hero-image:hover .profile-img {
-    transform: scale(1.05) rotate(-2deg) !important;
-}
-
-/* Enhanced fun mode styling with new colors */
-[data-theme="fun"] .btn-secondary {
-    background: var(--light-sea-green);
-    color: var(--caribbean-current);
-    border: 2px solid var(--caribbean-current);
-}
-
-[data-theme="fun"] .btn-secondary:hover {
-    background: var(--caribbean-current);
-    color: var(--cream);
-    transform: translateY(-2px);
-}
-
-[data-theme="fun"] .highlight {
-    background: linear-gradient(120deg, var(--light-sea-green), var(--teal-bright));
-    color: var(--cream);
-    padding: 0.2em 0.5em;
-    border-radius: 5px;
-}
-
-/* Fun mode overrides for modern effects */
-[data-theme="fun"] .header {
-    background: rgba(26, 94, 99, 0.95) !important;
-    backdrop-filter: blur(20px);
-}
-
-[data-theme="fun"] .footer {
-    background: rgba(26, 94, 99, 0.95) !important;
-    backdrop-filter: blur(20px);
-}
-
-[data-theme="fun"] .footer::before {
-    background: var(--accent) !important;
 }
 
 /* Smooth transitions for theme switching */
@@ -496,29 +489,25 @@
 
 /* Responsive adjustments for themes */
 @media (max-width: 768px) {
-    .section-title {
+    body:not([data-theme="fun"]) .section-title {
         background: var(--text-accent);
         -webkit-text-fill-color: initial;
         color: var(--text-accent);
     }
     
-    .project-card:hover {
+    body:not([data-theme="fun"]) .project-card:hover {
         transform: translateY(-5px) scale(1.01);
     }
     
     [data-theme="fun"] .hero-title {
-        background: none !important;
-        -webkit-text-fill-color: initial !important;
-        color: var(--text-primary) !important;
+        color: var(--text-primary);
     }
     
     [data-theme="fun"] .section-title {
-        background: none !important;
-        -webkit-text-fill-color: initial !important;
-        color: var(--text-accent) !important;
+        color: var(--text-accent);
     }
     
     [data-theme="fun"] .project-card:hover {
-        transform: translateY(-5px) !important;
+        transform: translateY(-5px);
     }
 }
