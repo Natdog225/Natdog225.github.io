@@ -1,11 +1,11 @@
 /* Color Variables - Professional Theme (Default) */
 :root {
-    --dark-purple: #320a28;
-    --tyrian-purple: #511730;
-    --chestnut: #8e443d;
+    --dark-purple: #1a1a2e;
+    --tyrian-purple: #16213e;
+    --chestnut: #0f4c75;
     --white: #ffffff;
     --dark-green: #002a22;
-    --teal: #61A0AF;
+    --teal: #3282b8;
     
     /* New Fun Mode Color Palette */
     --light-sea-green: #00bfb2;
@@ -14,16 +14,23 @@
     --cream: #f0f3bd;
     --bittersweet: #f87060;
     
+    /* Modern professional additions */
+    --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.25);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
     /* Professional Mode Colors */
     --bg-primary: var(--dark-purple);
     --bg-secondary: var(--tyrian-purple);
     --text-primary: var(--teal);
     --text-accent: var(--white);
     --accent: var(--chestnut);
-    --border-color: rgba(97, 160, 175, 0.2);
+    --border-color: rgba(50, 130, 184, 0.2);
 }
 
-/* Fun Theme Colors - Updated with New Palette */
+/* Fun Theme Colors */
 [data-theme="fun"] {
     --bg-primary: var(--caribbean-current);
     --bg-secondary: var(--teal-bright);
@@ -31,6 +38,239 @@
     --text-accent: var(--light-sea-green);
     --accent: var(--bittersweet);
     --border-color: rgba(240, 243, 189, 0.3);
+}
+
+/* Modern Professional Theme Enhancements */
+
+/* Modern card-based header */
+.header {
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Modern tile-based layout for sections */
+.about,
+.tech-stack,
+.projects,
+.resume,
+.contact {
+    position: relative;
+}
+
+.about::before,
+.tech-stack::before,
+.projects::before,
+.resume::before,
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Modern hero section */
+.hero {
+    background: 
+        linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+}
+
+/* Modern profile image styling */
+.profile-img {
+    border: 4px solid transparent;
+    background: var(--accent-gradient);
+    padding: 4px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+
+.profile-img:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-5px);
+}
+
+/* Modern button styling */
+.btn-primary {
+    background: var(--accent-gradient);
+    border: none;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Modern tech stack cards */
+.tech-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-gradient);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.tech-item:hover::before {
+    transform: scaleX(1);
+}
+
+/* Modern project cards */
+.project-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--accent-gradient);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.project-card:hover::before {
+    opacity: 0.05;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--card-shadow-hover);
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+/* Modern section titles with gradient */
+.section-title {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent-gradient);
+    border-radius: 2px;
+}
+
+/* Modern contact section */
+.contact-link {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--accent-gradient);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.contact-link:hover::before {
+    opacity: 1;
+}
+
+.contact-link:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow);
+}
+
+/* Modern footer */
+.footer {
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(20px);
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--accent-gradient);
+}
+
+/* Modern navigation enhancements */
+.nav-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+}
+
+.nav-link::after {
+    background: var(--accent-gradient);
+    height: 2px;
+    border-radius: 1px;
 }
 
 /* Theme-specific content visibility */
@@ -62,11 +302,6 @@
 
 /* Theme toggle button text change */
 .theme-toggle .toggle-text {
-    font-size: inherit; /* Show the text */
-}
-
-/* Hide the HTML text and show CSS content instead */
-.theme-toggle .toggle-text {
     font-size: 0; /* Hide original HTML text */
 }
 
@@ -80,11 +315,7 @@
     content: "Professional";
 }
 
-/* Fun mode specific styling */
-[data-theme="fun"] {
-    /* Add some personality to the fun version */
-}
-
+/* Fun Mode Specific Styling */
 [data-theme="fun"] .hero-title {
     background: linear-gradient(45deg, var(--text-accent), var(--accent));
     -webkit-background-clip: text;
@@ -94,16 +325,30 @@
 
 [data-theme="fun"] .section-title {
     position: relative;
+    background: var(--text-accent);
+    -webkit-text-fill-color: initial;
+    color: var(--text-accent);
 }
 
 [data-theme="fun"] .section-title::after {
     content: "✨";
     margin-left: 0.5rem;
     animation: sparkle 2s ease-in-out infinite alternate;
+    background: none;
+    width: auto;
+    height: auto;
+    position: static;
+    transform: none;
 }
 
 [data-theme="fun"] .project-card {
     border: 2px solid var(--accent);
+    background: var(--bg-primary);
+}
+
+[data-theme="fun"] .tech-item {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
 }
 
 [data-theme="fun"] .tech-item:hover {
@@ -128,6 +373,8 @@
 [data-theme="fun"] .profile-img {
     border-radius: 50%;
     border: 4px solid var(--accent);
+    background: none;
+    padding: 0;
 }
 
 [data-theme="fun"] .hero-cta .btn-primary {
@@ -151,8 +398,15 @@
 }
 
 /* Additional fun mode personality */
+[data-theme="fun"] .contact-link {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+}
+
 [data-theme="fun"] .contact-link:hover {
     animation: wiggle 0.5s ease-in-out;
+    background: var(--accent);
+    color: var(--text-primary);
 }
 
 @keyframes wiggle {
@@ -196,8 +450,29 @@
     border-radius: 5px;
 }
 
+/* Fun mode overrides for modern effects */
+[data-theme="fun"] .header {
+    background: rgba(26, 94, 99, 0.95);
+    backdrop-filter: blur(20px);
+}
+
+[data-theme="fun"] .footer {
+    background: rgba(26, 94, 99, 0.95);
+    backdrop-filter: blur(20px);
+}
+
 /* Responsive adjustments for themes */
 @media (max-width: 768px) {
+    .section-title {
+        background: var(--text-accent);
+        -webkit-text-fill-color: initial;
+        color: var(--text-accent);
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+    
     [data-theme="fun"] .hero-title {
         background: var(--text-accent);
         -webkit-text-fill-color: initial;
