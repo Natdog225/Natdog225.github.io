@@ -5,7 +5,7 @@
 	--chestnut: #0f4c75;
 	--white: #ffffff;
 	--dark-green: #002a22;
-	--teal: #3282b8;
+	--teal: #B0E0E6;
 
 	/* New Fun Mode Color Palette */
 	--light-sea-green: #00bfb2;
@@ -192,7 +192,7 @@ body:not([data-theme="fun"]) .section-title {
 	background-clip: text;
 	position: relative;
 	display: inline-block;
-	margin: 0 auto;
+	/* margin: 0 auto; */ /* Temp commented out for the moment */
 }
 
 body:not([data-theme="fun"]) .section-title::after {
