@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('.nav-link'); // Assuming your nav links have this class
+    const navLinks = document.querySelectorAll('.nav-link'); // Assuming nav links have this class, which I do ;)
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Check if it's an internal link
             if (href && href.startsWith('#') && href.length > 1) {
                 e.preventDefault(); // Only prevent default for actual internal fragment links
-                const targetId = href.substring(1); // Remove #
+                /* const targetId = href.substring(1); */
                 const targetSection = document.getElementById(targetId); // More reliable for IDs
 
                 if (targetSection) {
