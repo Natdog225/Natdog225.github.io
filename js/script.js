@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         function updateButtonText(theme) {
             const toggleTextSpan = themeToggle.querySelector('.toggle-text');
             if (toggleTextSpan) {
-                // CSS handles this via ::after pseudo-element, but we can add fallback
+                // CSS handles this via ::after pseudo-element
                 if (!getComputedStyle(toggleTextSpan, ':after').content || 
                     getComputedStyle(toggleTextSpan, ':after').content === 'none') {
                     // CSS pseudo-element isn't working, use direct text
@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update button text
             updateButtonText(newTheme);
 
-            // Optional: Add some fun effects when switching to fun mode
+            // Add some fun effects when switching to fun mode
             if (newTheme === 'fun') {
-                // Make sure createSparkles is defined elsewhere or define it here
+                // Make sure createSparkles is defined
                 if (typeof createSparkles === 'function') {
                     createSparkles();
                 } else {
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 }); // Closing DOMContentLoaded listener
 
-// Enhanced createSparkles function using your new color palette
+// Enhanced createSparkles function using new color palette
 function createSparkles() {
     console.log('✨ Sparkle effect activated!');
     const colors = ['#00bfb2', '#f87060', '#f0f3bd', '#028090']; // Your fun theme colors
