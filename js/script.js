@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Check if it's an internal link
             if (href && href.startsWith('#') && href.length > 1) {
                 e.preventDefault(); // Only prevent default for actual internal fragment links
-                /* const targetId = href.substring(1); */
+                const targetId = href.substring(1);
                 const targetSection = document.getElementById(targetId); // More reliable for IDs
 
                 if (targetSection) {
